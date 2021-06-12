@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  nuxt:
+    build:
+      context: ./web
+      args:
+        - BASE_IMAGE=${BASE_IMAGE}
+        - PROJECT_ROOT=${ROOT}
+    tty: true
+    volumes:
+      - ../:${ROOT}
+    ports:
+      - '3000:3000'
